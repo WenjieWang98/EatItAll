@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E574A8A29F4CCE700D82467 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E574A8929F4CCE700D82467 /* MainView.swift */; };
 		CB645CC129ECD81000730865 /* EatItAllApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CC029ECD81000730865 /* EatItAllApp.swift */; };
 		CB645CC329ECD81000730865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CC229ECD81000730865 /* ContentView.swift */; };
 		CB645CC529ECD81100730865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB645CC429ECD81100730865 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E574A8929F4CCE700D82467 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB645CBD29ECD81000730865 /* EatItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB645CC029ECD81000730865 /* EatItAllApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatItAllApp.swift; sourceTree = "<group>"; };
 		CB645CC229ECD81000730865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				CB645CF229F4C6FF00730865 /* FavoritePage.swift */,
 				CB645CF429F4C71600730865 /* BrowserPage.swift */,
 				CB645CF629F4C73100730865 /* ProfilePage.swift */,
+				4E574A8929F4CCE700D82467 /* MainView.swift */,
 			);
 			path = EatItAll;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB645CF529F4C71600730865 /* BrowserPage.swift in Sources */,
+				4E574A8A29F4CCE700D82467 /* MainView.swift in Sources */,
 				CB645CF129F4C6EA00730865 /* SeeAllPage.swift in Sources */,
 				CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */,
 				CB645CC329ECD81000730865 /* ContentView.swift in Sources */,
