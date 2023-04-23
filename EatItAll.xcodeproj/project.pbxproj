@@ -16,6 +16,10 @@
 		CB645CDE29ECD81100730865 /* EatItAllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CDD29ECD81100730865 /* EatItAllUITestsLaunchTests.swift */; };
 		CB645CEB29F4946F00730865 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CEA29F4946F00730865 /* CardView.swift */; };
 		CB645CED29F4AD0200730865 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CEC29F4AD0200730865 /* CardList.swift */; };
+		CB645CF129F4C6EA00730865 /* SeeAllPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF029F4C6EA00730865 /* SeeAllPage.swift */; };
+		CB645CF329F4C6FF00730865 /* FavoritePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF229F4C6FF00730865 /* FavoritePage.swift */; };
+		CB645CF529F4C71600730865 /* BrowserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF429F4C71600730865 /* BrowserPage.swift */; };
+		CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF629F4C73100730865 /* ProfilePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		CB645CDD29ECD81100730865 /* EatItAllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatItAllUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB645CEA29F4946F00730865 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CB645CEC29F4AD0200730865 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		CB645CF029F4C6EA00730865 /* SeeAllPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPage.swift; sourceTree = "<group>"; };
+		CB645CF229F4C6FF00730865 /* FavoritePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePage.swift; sourceTree = "<group>"; };
+		CB645CF429F4C71600730865 /* BrowserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPage.swift; sourceTree = "<group>"; };
+		CB645CF629F4C73100730865 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,10 @@
 				CB645CC629ECD81100730865 /* Preview Content */,
 				CB645CEA29F4946F00730865 /* CardView.swift */,
 				CB645CEC29F4AD0200730865 /* CardList.swift */,
+				CB645CF029F4C6EA00730865 /* SeeAllPage.swift */,
+				CB645CF229F4C6FF00730865 /* FavoritePage.swift */,
+				CB645CF429F4C71600730865 /* BrowserPage.swift */,
+				CB645CF629F4C73100730865 /* ProfilePage.swift */,
 			);
 			path = EatItAll;
 			sourceTree = "<group>";
@@ -263,9 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB645CF529F4C71600730865 /* BrowserPage.swift in Sources */,
+				CB645CF129F4C6EA00730865 /* SeeAllPage.swift in Sources */,
+				CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */,
 				CB645CC329ECD81000730865 /* ContentView.swift in Sources */,
 				CB645CEB29F4946F00730865 /* CardView.swift in Sources */,
 				CB645CC129ECD81000730865 /* EatItAllApp.swift in Sources */,
+				CB645CF329F4C6FF00730865 /* FavoritePage.swift in Sources */,
 				CB645CED29F4AD0200730865 /* CardList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
