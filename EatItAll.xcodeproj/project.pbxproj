@@ -14,6 +14,8 @@
 		CB645CD229ECD81100730865 /* EatItAllTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CD129ECD81100730865 /* EatItAllTests.swift */; };
 		CB645CDC29ECD81100730865 /* EatItAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CDB29ECD81100730865 /* EatItAllUITests.swift */; };
 		CB645CDE29ECD81100730865 /* EatItAllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CDD29ECD81100730865 /* EatItAllUITestsLaunchTests.swift */; };
+		CB645CEB29F4946F00730865 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CEA29F4946F00730865 /* CardView.swift */; };
+		CB645CED29F4AD0200730865 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CEC29F4AD0200730865 /* CardList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CB645CD729ECD81100730865 /* EatItAllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatItAllUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB645CDB29ECD81100730865 /* EatItAllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatItAllUITests.swift; sourceTree = "<group>"; };
 		CB645CDD29ECD81100730865 /* EatItAllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatItAllUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB645CEA29F4946F00730865 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CB645CEC29F4AD0200730865 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				CB645CC229ECD81000730865 /* ContentView.swift */,
 				CB645CC429ECD81100730865 /* Assets.xcassets */,
 				CB645CC629ECD81100730865 /* Preview Content */,
+				CB645CEA29F4946F00730865 /* CardView.swift */,
+				CB645CEC29F4AD0200730865 /* CardList.swift */,
 			);
 			path = EatItAll;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB645CC329ECD81000730865 /* ContentView.swift in Sources */,
+				CB645CEB29F4946F00730865 /* CardView.swift in Sources */,
 				CB645CC129ECD81000730865 /* EatItAllApp.swift in Sources */,
+				CB645CED29F4AD0200730865 /* CardList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

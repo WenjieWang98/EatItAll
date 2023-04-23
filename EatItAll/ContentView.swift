@@ -8,16 +8,97 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var searchText = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ScrollView{
+            VStack {
+                SearchBar(text: $searchText, placeholder: "Search")
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text("附近的惊喜盲盒")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .padding(.top, 5)
+                            .padding(.horizontal, 10)
+                        Spacer()
+                        Text("See all")
+                            .font(.subheadline)
+                            .foregroundColor(Color.green)
+                    }.padding(.horizontal, 10)
+                    
+                    CardList()
+                }.padding(.vertical, 10)
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text("推荐盲盒")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .padding(.top, 5)
+                            .padding(.horizontal, 10)
+                        Spacer()
+                        Text("See all")
+                            .font(.subheadline)
+                            .foregroundColor(Color.green)
+                    }.padding(.horizontal, 10)
+                    
+                    CardList()
+                }.padding(.vertical, 10)
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text("明天再来拿")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .padding(.top, 5)
+                            .padding(.horizontal, 10)
+                        Spacer()
+                        Text("See all")
+                            .font(.subheadline)
+                            .foregroundColor(Color.green)
+                    }.padding(.horizontal, 10)
+                    
+                    CardList()
+                }.padding(.vertical, 10)
+            }
+        }.background{
+            Color("Background").ignoresSafeArea()
         }
-        .padding()
+     
     }
+    
+    func SearchBar(text: Binding<String>, placeholder: String) -> some View {
+        HStack {
+            TextField(placeholder, text: text)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .overlay(
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 8)
+                    }
+                )
+                .padding(.horizontal, 15)
+                .padding(.vertical, 10)
+                .onTapGesture {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            if !text.wrappedValue.isEmpty {
+                Button(action: {
+                    text.wrappedValue = ""
+                }) {
+                    Text("Cancel")
+                        .foregroundColor(Color(.systemBlue))
+                }
+                .padding(.trailing, 10)
+            }
+        }
+    }
+
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
