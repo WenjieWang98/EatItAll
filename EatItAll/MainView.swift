@@ -12,19 +12,19 @@ struct MainView: View {
         TabView{
             ContentView()
                 .tabItem{
-                    Label("Discover", systemImage: "safari")
+                    Label("推荐", systemImage: "safari")
                 }
             BrowserPage()
                 .tabItem{
-                    Label("Browser", systemImage: "bag")
+                    Label("浏览", systemImage: "bag")
                 }
             FavoritePage()
                 .tabItem{
-                    Label("Favorite", systemImage: "heart")
+                    Label("收藏", systemImage: "heart")
                 }
             ProfilePage()
                 .tabItem{
-                    Label("Profile", systemImage: "person.circle")
+                    Label("我的", systemImage: "person.circle")
                 }
         }
     }
