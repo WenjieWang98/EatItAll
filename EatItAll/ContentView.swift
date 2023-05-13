@@ -65,38 +65,40 @@ struct ContentView: View {
      
     }
     
-    func SearchBar(text: Binding<String>, placeholder: String) -> some View {
-        HStack {
-            TextField(placeholder, text: text)
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 8)
-                    }
-                )
-                .padding(.horizontal, 15)
-                .padding(.vertical, 10)
-                .onTapGesture {
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    
+
+}
+
+func SearchBar(text: Binding<String>, placeholder: String) -> some View {
+    HStack {
+        TextField(placeholder, text: text)
+            .padding(7)
+            .padding(.horizontal, 25)
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+            .overlay(
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 8)
                 }
-            if !text.wrappedValue.isEmpty {
-                Button(action: {
-                    text.wrappedValue = ""
-                }) {
-                    Text("Cancel")
-                        .foregroundColor(Color(.systemBlue))
-                }
-                .padding(.trailing, 10)
+            )
+            .padding(.horizontal, 15)
+            .padding(.vertical, 10)
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
+        if !text.wrappedValue.isEmpty {
+            Button(action: {
+                text.wrappedValue = ""
+            }) {
+                Text("Cancel")
+                    .foregroundColor(Color(.systemBlue))
+            }
+            .padding(.trailing, 10)
         }
     }
-
 }
 
 
