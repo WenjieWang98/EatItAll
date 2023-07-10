@@ -9,6 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var searchText = ""
+    @State private var responseData: String = ""
+    let httpClient = HTTPClient()
+    let cardList: [cardData] = [
+        cardData(
+             id: "1",
+             storeLogo: Image("storeLogo"),
+             storeName: "星巴克",
+             itemName: "惊喜盲盒",
+             pickupTime: "5:00 PM - 6:00 PM",
+             rating: 4.5,
+             distance: "0.5 公里",
+             price: "$5.99",
+             isFavorite: false,
+             isOneLeft: true
+        ),
+        ]
     var body: some View {
         ScrollView{
             VStack {
@@ -26,7 +42,7 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList()
+                    CardList(cardList:cardList)
                 }.padding(.vertical, 10)
                 VStack(alignment: .leading) {
                     HStack{
@@ -41,7 +57,7 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList()
+                    CardList(cardList:cardList)
                 }.padding(.vertical, 10)
                 VStack(alignment: .leading) {
                     HStack{
@@ -56,18 +72,36 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList()
+                    CardList(cardList:cardList)
                 }.padding(.vertical, 10)
+            }.onAppear {
+                sendRequest()
+                print("responseData")
+                print(responseData)
             }
         }.background{
             Color("Background").ignoresSafeArea()
         }
      
     }
-    
-    
-
+    func sendRequest() {
+        httpClient.sendGetRequest(api: "/get_stores") { data, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            if let data = data {
+                if let responseString = String(data: data, encoding: .utf8) {
+                    DispatchQueue.main.async {
+                        responseData = responseString
+                    }
+                }
+            }
+        }
+    }
 }
+
+
 
 func SearchBar(text: Binding<String>, placeholder: String) -> some View {
     HStack {
