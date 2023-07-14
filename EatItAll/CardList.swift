@@ -15,14 +15,14 @@ struct CardList: View {
             HStack(spacing: 40) {
                 ForEach(cardList) { card in
                     CardView( storeLogo: Image("storeLogo"),
-                               storeName: card.storeName,
-                               itemName: card.itemName,
-                               pickupTime:card.pickupTime,
-                               rating: card.rating,
-                               distance: card.distance,
+                               storeName: card.store_name,
+                               itemName: "惊喜盲盒",
+                               pickupTime:card.pick_up_time,
+                               rating: 4.5,
+                               distance: "0.5 公里",
                                price:card.price,
-                               isFavorite: card.isFavorite,
-                               isOneLeft: card.isOneLeft
+                               isFavorite: false,
+                               isOneLeft: card.package_left == 1
                     )
                 }
             }
@@ -46,64 +46,37 @@ struct cardData: Identifiable {
 }
 
 struct cardDatajson: Identifiable, Decodable {
-    var id: String
-    
-    var storeName: String
-    var itemName: String
-    var pickupTime: String
-    var rating: Double
-    var distance: String
+    var id: Int { store_id }
+    var store_id: Int
+    var store_name: String
+    var store_address: String
+    var pick_up_time: String
+//    var rating: Double
+//    var distance: String
     var price: String
-    var isFavorite: Bool
-    var isOneLeft: Bool
+    var package_left: Int
+//    var isFavorite: Bool
+//    var isOneLeft: Bool
 }
 
 struct CardList_Previews: PreviewProvider {
     static var previews: some View {
         let cardList: [cardDatajson] = [
             cardDatajson(
-                 id: "1",
-                 storeName: "星巴克",
-                 itemName: "惊喜盲盒",
-                 pickupTime: "5:00 PM - 6:00 PM",
-                 rating: 4.5,
-                 distance: "0.5 公里",
+                 store_id: 1,
+                 store_name: "星巴克",
+                 store_address: "2929 Broadway, New York, NY 10025",
+                 pick_up_time: "5:00 PM - 7:00 PM",
                  price: "$5.99",
-                 isFavorite: false,
-                 isOneLeft: true
+                 package_left: 10
             ),
             cardDatajson(
-                 id: "1",
-                 storeName: "星巴克",
-                 itemName: "惊喜盲盒",
-                 pickupTime: "5:00 PM - 6:00 PM",
-                 rating: 4.5,
-                 distance: "0.5 公里",
+                 store_id: 1,
+                 store_name: "星巴克",
+                 store_address: "2929 Broadway, New York, NY 10025",
+                 pick_up_time: "5:00 PM - 7:00 PM",
                  price: "$5.99",
-                 isFavorite: false,
-                 isOneLeft: true
-            ),
-            cardDatajson(
-                 id: "1",
-                 storeName: "星巴克",
-                 itemName: "惊喜盲盒",
-                 pickupTime: "5:00 PM - 6:00 PM",
-                 rating: 4.5,
-                 distance: "0.5 公里",
-                 price: "$5.99",
-                 isFavorite: false,
-                 isOneLeft: true
-            ),
-            cardDatajson(
-                 id: "1",
-                 storeName: "星巴克",
-                 itemName: "惊喜盲盒",
-                 pickupTime: "5:00 PM - 6:00 PM",
-                 rating: 4.5,
-                 distance: "0.5 公里",
-                 price: "$5.99",
-                 isFavorite: false,
-                 isOneLeft: true
+                 package_left: 10
             ),
             ]
         CardList(cardList: cardList)

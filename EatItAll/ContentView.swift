@@ -10,32 +10,14 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText = ""
     @State private var responseData: String = ""
-    struct cardDatajson: Identifiable, Decodable {
-        var id: String
-        var storeName: String
-        var itemName: String
-        var pickupTime: String
-        var rating: Double
-        var distance: String
-        var price: String
-        var isFavorite: Bool
-        var isOneLeft: Bool
-    }
+    @State var respData: resp = resp(code: 0, Stores: [])
+    
     let httpClient = HTTPClient()
-    let cardList: [cardData] = [
-        cardData(
-             id: "1",
-             storeLogo: Image("storeLogo"),
-             storeName: "星巴克",
-             itemName: "惊喜盲盒",
-             pickupTime: "5:00 PM - 6:00 PM",
-             rating: 4.5,
-             distance: "0.5 公里",
-             price: "$5.99",
-             isFavorite: false,
-             isOneLeft: true
-        ),
-        ]
+    
+    struct resp: Decodable {
+        var code: Int
+        var Stores: [cardDatajson]
+    }
     var body: some View {
         ScrollView{
             VStack {
@@ -53,7 +35,7 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList(cardList:cardList)
+                    CardList(cardList:respData.Stores)
                 }.padding(.vertical, 10)
                 VStack(alignment: .leading) {
                     HStack{
@@ -68,7 +50,7 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList(cardList:cardList)
+                    CardList(cardList:respData.Stores)
                 }.padding(.vertical, 10)
                 VStack(alignment: .leading) {
                     HStack{
@@ -83,7 +65,7 @@ struct ContentView: View {
                             .foregroundColor(Color.green)
                     }.padding(.horizontal, 10)
                     
-                    CardList(cardList:cardList)
+                    CardList(cardList:respData.Stores)
                 }.padding(.vertical, 10)
             }.onAppear {
                 sendRequest()
@@ -95,7 +77,7 @@ struct ContentView: View {
         }
      
     }
-    @State var test: [cardDatajson] = []
+    
     func sendRequest() {
         httpClient.sendGetRequest(api: "/get_stores") { data, error in
             if let error = error {
@@ -106,9 +88,9 @@ struct ContentView: View {
                 let decoder = JSONDecoder()
                 DispatchQueue.main.async {
                     do{
-                        test = try decoder.decode([cardDatajson].self, from:data ?? Data())
+                        respData = try decoder.decode(resp.self, from:dataJSON)
                     }catch{
-                        print("Json Error")
+                        print("Error info: \(error)")
                     }
                 }
             }

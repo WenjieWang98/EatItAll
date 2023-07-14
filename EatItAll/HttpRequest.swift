@@ -8,7 +8,7 @@
 import Foundation
 
 class HTTPClient {
-    let domain = "http://wenjie98.pythonanywhere.com"
+    let domain = "https://wenjie98.pythonanywhere.com"
     func sendGetRequest(api: String, completion: @escaping (Data?, Error?) -> Void) {
         let urlString = domain + api
         guard let url = URL(string: urlString) else {
