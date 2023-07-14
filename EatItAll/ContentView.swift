@@ -10,6 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText = ""
     @State private var responseData: String = ""
+    struct cardDatajson: Identifiable, Decodable {
+        var id: String
+        var storeName: String
+        var itemName: String
+        var pickupTime: String
+        var rating: Double
+        var distance: String
+        var price: String
+        var isFavorite: Bool
+        var isOneLeft: Bool
+    }
     let httpClient = HTTPClient()
     let cardList: [cardData] = [
         cardData(
@@ -84,18 +95,25 @@ struct ContentView: View {
         }
      
     }
+    @State var test: [cardDatajson] = []
     func sendRequest() {
         httpClient.sendGetRequest(api: "/get_stores") { data, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return
             }
-            if let data = data {
-                if let responseString = String(data: data, encoding: .utf8) {
-                    DispatchQueue.main.async {
-                        responseData = responseString
+            if let dataJSON = data {
+                let decoder = JSONDecoder()
+                DispatchQueue.main.async {
+                    do{
+                        test = try decoder.decode([cardDatajson].self, from:data ?? Data())
+                    }catch{
+                        print("Json Error")
                     }
                 }
+            }
+            else{
+                print("no data")
             }
         }
     }

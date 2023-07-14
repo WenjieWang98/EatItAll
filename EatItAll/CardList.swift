@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct CardList: View {
-    let cardList: [cardData]
+    let cardList: [cardDatajson]
     var body: some View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 40) {
                 ForEach(cardList) { card in
-                    CardView(storeLogo: card.storeLogo,
-                             storeName: card.storeName,
-                             itemName: card.itemName,
-                             pickupTime: card.pickupTime,
-                             rating: card.rating,
-                             distance: card.distance,
-                             price: card.price,
-                             isFavorite: card.isFavorite,
-                             isOneLeft: card.isOneLeft
+                    CardView( storeLogo: Image("storeLogo"),
+                               storeName: card.storeName,
+                               itemName: card.itemName,
+                               pickupTime:card.pickupTime,
+                               rating: card.rating,
+                               distance: card.distance,
+                               price:card.price,
+                               isFavorite: card.isFavorite,
+                               isOneLeft: card.isOneLeft
                     )
                 }
             }
@@ -60,10 +60,9 @@ struct cardDatajson: Identifiable, Decodable {
 
 struct CardList_Previews: PreviewProvider {
     static var previews: some View {
-        let cardList: [cardData] = [
-            cardData(
+        let cardList: [cardDatajson] = [
+            cardDatajson(
                  id: "1",
-                 storeLogo: Image("storeLogo"),
                  storeName: "星巴克",
                  itemName: "惊喜盲盒",
                  pickupTime: "5:00 PM - 6:00 PM",
@@ -73,9 +72,8 @@ struct CardList_Previews: PreviewProvider {
                  isFavorite: false,
                  isOneLeft: true
             ),
-            cardData(
+            cardDatajson(
                  id: "1",
-                 storeLogo: Image("storeLogo"),
                  storeName: "星巴克",
                  itemName: "惊喜盲盒",
                  pickupTime: "5:00 PM - 6:00 PM",
@@ -85,9 +83,8 @@ struct CardList_Previews: PreviewProvider {
                  isFavorite: false,
                  isOneLeft: true
             ),
-            cardData(
+            cardDatajson(
                  id: "1",
-                 storeLogo: Image("storeLogo"),
                  storeName: "星巴克",
                  itemName: "惊喜盲盒",
                  pickupTime: "5:00 PM - 6:00 PM",
@@ -97,9 +94,8 @@ struct CardList_Previews: PreviewProvider {
                  isFavorite: false,
                  isOneLeft: true
             ),
-            cardData(
+            cardDatajson(
                  id: "1",
-                 storeLogo: Image("storeLogo"),
                  storeName: "星巴克",
                  itemName: "惊喜盲盒",
                  pickupTime: "5:00 PM - 6:00 PM",
