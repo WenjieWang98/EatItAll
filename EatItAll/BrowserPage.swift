@@ -91,7 +91,8 @@ struct ListView: View {
                              distance: card.distance,
                              price: card.price,
                              isFavorite: card.isFavorite,
-                             isOneLeft: card.isOneLeft
+                             isOneLeft: card.isOneLeft,
+                             address: "2929 Broadway, New York, NY 10025"
                     ).padding(.horizontal, 15).padding(.vertical, 10)
                 }
             }

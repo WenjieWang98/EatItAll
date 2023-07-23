@@ -22,7 +22,8 @@ struct CardList: View {
                                distance: "0.5 公里",
                                price:card.price,
                                isFavorite: false,
-                               isOneLeft: card.package_left == 1
+                               isOneLeft: card.package_left == 1,
+                              address: card.store_address
                     )
                 }
             }
