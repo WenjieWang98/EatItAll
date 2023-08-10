@@ -35,26 +35,28 @@ struct FavoritePage: View {
                  isOneLeft: true
             )
         ]
-        VStack{
-            HStack{
-                Text("收藏").font(.title)
-                    .fontWeight(.bold).padding(.horizontal)
-                Spacer()
-            }
-            ScrollView(.vertical, showsIndicators: false){
-                VStack{
-                    ForEach(cardList) { card in
-                        CardView(storeLogo: card.storeLogo,
-                                 storeName: card.storeName,
-                                 itemName: card.itemName,
-                                 pickupTime: card.pickupTime,
-                                 rating: card.rating,
-                                 distance: card.distance,
-                                 price: card.price,
-                                 isFavorite: card.isFavorite,
-                                 isOneLeft: card.isOneLeft,
-                                 address: "2929 Broadway, New York, NY 10025"
-                        ).padding(.horizontal, 15).padding(.vertical, 10)
+        NavigationView {
+            VStack{
+                HStack{
+                    Text("收藏").font(.title)
+                        .fontWeight(.bold).padding(.horizontal)
+                    Spacer()
+                }
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack{
+                        ForEach(cardList) { card in
+                            CardView(storeLogo: card.storeLogo,
+                                     storeName: card.storeName,
+                                     itemName: card.itemName,
+                                     pickupTime: card.pickupTime,
+                                     rating: card.rating,
+                                     distance: card.distance,
+                                     price: card.price,
+                                     isFavorite: card.isFavorite,
+                                     isOneLeft: card.isOneLeft,
+                                     address: "2929 Broadway, New York, NY 10025"
+                            ).padding(.horizontal, 15).padding(.vertical, 10)
+                        }
                     }
                 }
             }

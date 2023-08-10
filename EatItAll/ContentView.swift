@@ -19,63 +19,64 @@ struct ContentView: View {
         var Stores: [cardDatajson]
     }
     var body: some View {
-        ScrollView{
-            VStack {
-                SearchBar(text: $searchText, placeholder: "Search")
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text("附近的惊喜盲盒")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 5)
-                            .padding(.horizontal, 10)
-                        Spacer()
-                        Text("See all")
-                            .font(.subheadline)
-                            .foregroundColor(Color.green)
-                    }.padding(.horizontal, 10)
-                    
-                    CardList(cardList:respData.Stores)
-                }.padding(.vertical, 10)
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text("推荐盲盒")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 5)
-                            .padding(.horizontal, 10)
-                        Spacer()
-                        Text("See all")
-                            .font(.subheadline)
-                            .foregroundColor(Color.green)
-                    }.padding(.horizontal, 10)
-                    
-                    CardList(cardList:respData.Stores)
-                }.padding(.vertical, 10)
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text("明天再来拿")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 5)
-                            .padding(.horizontal, 10)
-                        Spacer()
-                        Text("See all")
-                            .font(.subheadline)
-                            .foregroundColor(Color.green)
-                    }.padding(.horizontal, 10)
-                    
-                    CardList(cardList:respData.Stores)
-                }.padding(.vertical, 10)
-            }.onAppear {
-                sendRequest()
-                print("responseData")
-                print(responseData)
+        NavigationView {
+            ScrollView{
+                VStack {
+                    SearchBar(text: $searchText, placeholder: "Search")
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("附近的惊喜盲盒")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.top, 5)
+                                .padding(.horizontal, 10)
+                            Spacer()
+                            Text("See all")
+                                .font(.subheadline)
+                                .foregroundColor(Color.green)
+                        }.padding(.horizontal, 10)
+                        
+                        CardList(cardList:respData.Stores)
+                    }.padding(.vertical, 10)
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("推荐盲盒")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.top, 5)
+                                .padding(.horizontal, 10)
+                            Spacer()
+                            Text("See all")
+                                .font(.subheadline)
+                                .foregroundColor(Color.green)
+                        }.padding(.horizontal, 10)
+                        
+                        CardList(cardList:respData.Stores)
+                    }.padding(.vertical, 10)
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("明天再来拿")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.top, 5)
+                                .padding(.horizontal, 10)
+                            Spacer()
+                            Text("See all")
+                                .font(.subheadline)
+                                .foregroundColor(Color.green)
+                        }.padding(.horizontal, 10)
+                        
+                        CardList(cardList:respData.Stores)
+                    }.padding(.vertical, 10)
+                }.onAppear {
+                    sendRequest()
+                    print("responseData")
+                    print(responseData)
+                }
+            }.background{
+                Color("Background").ignoresSafeArea()
             }
-        }.background{
-            Color("Background").ignoresSafeArea()
         }
-     
     }
     
     func sendRequest() {

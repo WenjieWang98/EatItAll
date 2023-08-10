@@ -11,17 +11,19 @@ struct BrowserPage: View {
     @State private var searchText = ""
     @State private var showList: Bool = true
     var body: some View {
-        VStack{
-            SearchBar(text: $searchText, placeholder: "Search")
-            HStack{
-                ListButton(showList: $showList)
-                MapButton(showList: $showList)
-            }
-        
-            if showList {
-                ListView()
-            } else {
-                MapView()
+        NavigationView {
+            VStack{
+                SearchBar(text: $searchText, placeholder: "Search")
+                HStack{
+                    ListButton(showList: $showList)
+                    MapButton(showList: $showList)
+                }
+                
+                if showList {
+                    ListView()
+                } else {
+                    MapView()
+                }
             }
         }
     }

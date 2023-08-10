@@ -23,6 +23,7 @@
 		CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF629F4C73100730865 /* ProfilePage.swift */; };
 		CBBD08EA2A5B8684009BBC4D /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */; };
 		CBBD08EC2A6CCD21009BBC4D /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */; };
+		CBBD08F02A84A605009BBC4D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08EF2A84A605009BBC4D /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		CB645CF629F4C73100730865 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
+		CBBD08EF2A84A605009BBC4D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				4E574A8929F4CCE700D82467 /* MainView.swift */,
 				CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */,
 				CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */,
+				CBBD08EF2A84A605009BBC4D /* TestView.swift */,
 			);
 			path = EatItAll;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBD08F02A84A605009BBC4D /* TestView.swift in Sources */,
 				CB645CF529F4C71600730865 /* BrowserPage.swift in Sources */,
 				CBBD08EC2A6CCD21009BBC4D /* DetailPage.swift in Sources */,
 				CBBD08EA2A5B8684009BBC4D /* HttpRequest.swift in Sources */,
