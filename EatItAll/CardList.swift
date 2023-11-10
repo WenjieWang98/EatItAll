@@ -47,8 +47,8 @@ struct cardData: Identifiable {
 }
 
 struct cardDatajson: Identifiable, Decodable {
-    var id: Int { store_id }
-    var store_id: Int
+    var id: String { store_id }
+    var store_id: String
     var store_name: String
     var store_address: String
     var pick_up_time: String
@@ -64,7 +64,7 @@ struct CardList_Previews: PreviewProvider {
     static var previews: some View {
         let cardList: [cardDatajson] = [
             cardDatajson(
-                 store_id: 1,
+                 store_id: "1",
                  store_name: "星巴克",
                  store_address: "2929 Broadway, New York, NY 10025",
                  pick_up_time: "5:00 PM - 7:00 PM",
@@ -72,7 +72,7 @@ struct CardList_Previews: PreviewProvider {
                  package_left: 10
             ),
             cardDatajson(
-                 store_id: 1,
+                 store_id: "1",
                  store_name: "星巴克",
                  store_address: "2929 Broadway, New York, NY 10025",
                  pick_up_time: "5:00 PM - 7:00 PM",

@@ -9,45 +9,59 @@ import SwiftUI
 
 struct ProfilePage: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack(spacing: 20) {
-                    NavigationLink(destination: MoneySavedView()) {
-                        ButtonView(title: "Money Saved", imageName: "dollarsign")
+        if UserDefaults.standard.bool(forKey: "isLoggedIn"){
+            NavigationView {
+                VStack {
+                    HStack(spacing: 20) {
+                        NavigationLink(destination: MoneySavedView()) {
+                            ButtonView(title: "Money Saved", imageName: "dollarsign")
+                        }
+                        NavigationLink(destination: YourOrdersView()) {
+                            ButtonView(title: "Your Orders", imageName: "cart")
+                        }
+                        NavigationLink(destination: CO2ESavedView()) {
+                            ButtonView(title: "CO2E Saved", imageName: "leaf")
+                        }
                     }
-                    NavigationLink(destination: YourOrdersView()) {
-                        ButtonView(title: "Your Orders", imageName: "cart")
-                    }
-                    NavigationLink(destination: CO2ESavedView()) {
-                        ButtonView(title: "CO2E Saved", imageName: "leaf")
-                    }
-                }
-                .padding(.top, 10)
-                VStack(spacing: 20) {
-                    NavigationLink(destination: SettingsView()) {
-                        ButtonView2(title: "Settings", imageName: "gearshape")
-                    }
-                    
-                    NavigationLink(destination: StoreLoginView()) {
-                        ButtonView2(title: "Store login", imageName: "bag")
+                    .padding(.top, 10)
+                    VStack(spacing: 20) {
+                        NavigationLink(destination: SettingsView()) {
+                            ButtonView2(title: "Settings", imageName: "gearshape")
+                        }
                         
+                        NavigationLink(destination: StoreLoginView()) {
+                            ButtonView2(title: "Store login", imageName: "bag")
+                            
+                        }
+                        
+                        NavigationLink(destination: HelpCenterView()) {
+                            ButtonView2(title: "Help Center", imageName: "questionmark.circle")
+                        }
+                        
+                        NavigationLink(destination: LegalView()) {
+                            ButtonView2(title: "Legal", imageName: "hammer")
+                        }
+                        
+                        NavigationLink(destination: ProfilePage().navigationBarBackButtonHidden(true)){
+                            ButtonView2(title: "Log Out", imageName: "arrow.right.circle.fill")
+                        }.simultaneousGesture(TapGesture().onEnded{
+                            logout()
+                        })
                     }
+                    .padding(.top, 20)
                     
-                    NavigationLink(destination: HelpCenterView()) {
-                        ButtonView2(title: "Help Center", imageName: "questionmark.circle")
-                    }
-                    
-                    NavigationLink(destination: LegalView()) {
-                        ButtonView2(title: "Legal", imageName: "hammer")
-                    }
+                    Spacer()
                 }
-                .padding(.top, 20)
-                
-                Spacer()
             }
+            .navigationBarTitle("Profile")
+            .padding()
+        } else {
+            StartView()
         }
-        .navigationBarTitle("Profile")
-        .padding()
+    }
+    
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
     }
 }
 
@@ -120,7 +134,10 @@ struct SettingsView: View {
     var body: some View {
         Text("Settings View")
     }
+    
+    
 }
+
 
 struct StoreLoginView: View {
     var body: some View {

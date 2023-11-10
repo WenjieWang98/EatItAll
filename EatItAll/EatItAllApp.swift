@@ -11,7 +11,11 @@ import SwiftUI
 struct EatItAllApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+                MainView()
+            } else {
+                StartView()
+            }
         }
     }
 }

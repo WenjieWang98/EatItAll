@@ -9,23 +9,27 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView{
-            ContentView()
-                .tabItem{
-                    Label("推荐", systemImage: "safari")
-                }
-            BrowserPage()
-                .tabItem{
-                    Label("浏览", systemImage: "bag")
-                }
-            FavoritePage()
-                .tabItem{
-                    Label("收藏", systemImage: "heart")
-                }
-            ProfilePage()
-                .tabItem{
-                    Label("我的", systemImage: "person.circle")
-                }
+        if UserDefaults.standard.bool(forKey: "isLoggedIn"){
+            TabView{
+                ContentView()
+                    .tabItem{
+                        Label("推荐", systemImage: "safari")
+                    }
+                BrowserPage()
+                    .tabItem{
+                        Label("浏览", systemImage: "bag")
+                    }
+                FavoritePage()
+                    .tabItem{
+                        Label("收藏", systemImage: "heart")
+                    }
+                ProfilePage()
+                    .tabItem{
+                        Label("我的", systemImage: "person.circle")
+                    }
+            }
+        }else{
+            StartView()
         }
     }
 }

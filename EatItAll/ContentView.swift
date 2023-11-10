@@ -10,12 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var searchText = ""
     @State private var responseData: String = ""
-    @State var respData: resp = resp(code: 0, Stores: [])
+    @State var respData: resp = resp(Stores: [])
     
     let httpClient = HTTPClient()
     
     struct resp: Decodable {
-        var code: Int
         var Stores: [cardDatajson]
     }
     var body: some View {
@@ -80,7 +79,7 @@ struct ContentView: View {
     }
     
     func sendRequest() {
-        httpClient.sendGetRequest(api: "/get_stores") { data, error in
+        httpClient.sendEmptyPostRequest(api: "/store/get-all") { data, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return

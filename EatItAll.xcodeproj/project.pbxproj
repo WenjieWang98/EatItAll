@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E574A8A29F4CCE700D82467 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E574A8929F4CCE700D82467 /* MainView.swift */; };
+		CB3C62312AE5B7B600D4F398 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C62302AE5B7B600D4F398 /* StartView.swift */; };
 		CB645CC129ECD81000730865 /* EatItAllApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CC029ECD81000730865 /* EatItAllApp.swift */; };
 		CB645CC329ECD81000730865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CC229ECD81000730865 /* ContentView.swift */; };
 		CB645CC529ECD81100730865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB645CC429ECD81100730865 /* Assets.xcassets */; };
@@ -23,7 +24,8 @@
 		CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB645CF629F4C73100730865 /* ProfilePage.swift */; };
 		CBBD08EA2A5B8684009BBC4D /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */; };
 		CBBD08EC2A6CCD21009BBC4D /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */; };
-		CBBD08F02A84A605009BBC4D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD08EF2A84A605009BBC4D /* TestView.swift */; };
+		CBF12FD32AE5CA9D00D5B6BE /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF12FD22AE5CA9D00D5B6BE /* test.swift */; };
+		CBF12FD52AE5DD4F00D5B6BE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF12FD42AE5DD4F00D5B6BE /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		4E574A8929F4CCE700D82467 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CB3C62302AE5B7B600D4F398 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CB645CBD29ECD81000730865 /* EatItAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatItAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB645CC029ECD81000730865 /* EatItAllApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatItAllApp.swift; sourceTree = "<group>"; };
 		CB645CC229ECD81000730865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +66,8 @@
 		CB645CF629F4C73100730865 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
-		CBBD08EF2A84A605009BBC4D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		CBF12FD22AE5CA9D00D5B6BE /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		CBF12FD42AE5DD4F00D5B6BE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,9 @@
 				4E574A8929F4CCE700D82467 /* MainView.swift */,
 				CBBD08E92A5B8684009BBC4D /* HttpRequest.swift */,
 				CBBD08EB2A6CCD21009BBC4D /* DetailPage.swift */,
-				CBBD08EF2A84A605009BBC4D /* TestView.swift */,
+				CB3C62302AE5B7B600D4F398 /* StartView.swift */,
+				CBF12FD22AE5CA9D00D5B6BE /* test.swift */,
+				CBF12FD42AE5DD4F00D5B6BE /* UserSettings.swift */,
 			);
 			path = EatItAll;
 			sourceTree = "<group>";
@@ -287,16 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBBD08F02A84A605009BBC4D /* TestView.swift in Sources */,
 				CB645CF529F4C71600730865 /* BrowserPage.swift in Sources */,
 				CBBD08EC2A6CCD21009BBC4D /* DetailPage.swift in Sources */,
 				CBBD08EA2A5B8684009BBC4D /* HttpRequest.swift in Sources */,
+				CBF12FD32AE5CA9D00D5B6BE /* test.swift in Sources */,
 				4E574A8A29F4CCE700D82467 /* MainView.swift in Sources */,
 				CB645CF129F4C6EA00730865 /* SeeAllPage.swift in Sources */,
 				CB645CF729F4C73100730865 /* ProfilePage.swift in Sources */,
+				CB3C62312AE5B7B600D4F398 /* StartView.swift in Sources */,
 				CB645CC329ECD81000730865 /* ContentView.swift in Sources */,
 				CB645CEB29F4946F00730865 /* CardView.swift in Sources */,
 				CB645CC129ECD81000730865 /* EatItAllApp.swift in Sources */,
+				CBF12FD52AE5DD4F00D5B6BE /* UserSettings.swift in Sources */,
 				CB645CF329F4C6FF00730865 /* FavoritePage.swift in Sources */,
 				CB645CED29F4AD0200730865 /* CardList.swift in Sources */,
 			);
@@ -457,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EatItAll/Preview Content\"";
+				DEVELOPMENT_TEAM = 9K4TP3VSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -464,6 +473,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EatItAll/Preview Content\"";
+				DEVELOPMENT_TEAM = 9K4TP3VSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -492,6 +503,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
